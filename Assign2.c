@@ -145,7 +145,7 @@ void f5()
     printf("\n");
     for (int i = 1; i <= 4; i++)
     {
-        printf("\n");
+        printf("\n\n");
     }
 }
 
