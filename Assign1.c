@@ -137,7 +137,7 @@ void f10()
     printf("                = %.2fcm^2 ans.\n", Area);
     printf("\n");
     printf("**************************** END OF QUESTION 10th ****************************\n");
-    printf("\n\n\n\n\n");
+    printf("\n");
 }
 
 // MAIN
