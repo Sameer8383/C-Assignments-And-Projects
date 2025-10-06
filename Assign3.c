@@ -110,7 +110,7 @@ void f5()
     printf("**************************** END OF QUESTION 5th ****************************\n");
     printf("\n");
 
-    for (int i = 1; i <= 4; i++)
+    for (int i = 1; i < 5; i++)
     {
         printf("\n");
     }
