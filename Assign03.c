@@ -62,10 +62,9 @@ void f3()
     printf("ASCII value of %c = %d\n", ch3, ch3);
     printf("\n");
     printf("\n");
-    printf("**************************** END OF QUESTION 3rd ****************************\n");
-    printf("\n");
+    printf("**************************** END OF QUESTION 3rd ****************************");
 
-    for (int i = 1; i <= 4; i++)
+    for (int i = 1; i <= 5; i++)
     {
         printf("\n");
     }
