@@ -1,4 +1,4 @@
-# BCA-Projects
-This respiratory contains my BCA projects, programs in C &amp; C++, Data Structure &amp; Algorithms practice, and mini/micro project work.
+# C-Assignments-And-Projects
+This repository includes all my C++ assignments, projects, and experimental mini/micro projects developed during my learning journey.
 <br>
 Author-Sameer Sharma.
