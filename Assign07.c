@@ -20,7 +20,7 @@ void f1()
     printf("**************************** END OF QUESTION 1st ****************************");
 
     int i = 1;
-    while (i <= 5)
+    while (i < 6)
     {
         printf("\n");
         i++;
