@@ -31,7 +31,7 @@ void f1()
     printf("\n");
 
     int i = 1;
-    while (i <= 5)
+    while (i < 6)
     {
         i++;
         printf("\n");
