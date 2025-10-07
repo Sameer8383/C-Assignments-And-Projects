@@ -44,7 +44,7 @@ void f2()
     {
         printf("\n");
         i++;
-    } while (i <= 5);
+    } while (i < 6);
 }
 
 // Q3
