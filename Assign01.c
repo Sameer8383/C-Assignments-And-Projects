@@ -10,8 +10,10 @@ void f1()
     printf("\nQ1. WAP to print Hello Students on the screen.\n\n");
     printf("Hello Students!\n");
     printf("\n");
-    printf("**************************** END OF QUESTION 1st ****************************\n");
-    printf("\n\n\n\n");
+    printf("**************************** END OF QUESTION 1st ****************************");
+
+    for (int i = 0; i <= 4; i++)
+        printf("\n");
 }
 
 // Q2
