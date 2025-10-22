@@ -187,6 +187,6 @@ int main() {
     // f9();
      f10();
      
-    printf("=========== END OF ASSIGNMENT 12 ===========\n");
+    printf("=========== END OF ASSIGNMENT 12 ===========");
     return 0;
 }
