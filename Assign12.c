@@ -174,45 +174,6 @@ void f10() {
     printf("          END OF QUESTION 10\n");
         printf("*********************************************\n\n\n");
 }
-int isPalindrome(char *str)
-{
-    int l, i;
-
-    // Find the length of string
-    for(l = 0; str[l] != '\0'; l++);
-
-    // Check characters from both ends
-    for(i = 0; i < l / 2; i++)
-    {
-        if(str[i] != str[l - i - 1])
-            return 0;   // Not palindrome
-    }
-    return 1;   // Palindrome
-}
-
-void f11()
-{
-    printf("******************************************\n");
-    printf("Q11. Write a program to check whether a given string is a palindrome or not.\n");
-    printf("******************************************\n\n     "); // 5 spaces
-
-    char str[100];
-    char *ptr = str;   
-
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-
-    str[strcspn(str, "\n")] = '\0';
-
-    if(isPalindrome(ptr))
-        printf("The string \"%s\" is a Palindrome.\n", str);
-    else
-        printf("The string \"%s\" is NOT a Palindrome.\n", str);
-
-    printf("\n******************************************\n");
-    printf("          END OF QUESTION 11\n");
-    printf("*********************************************\n\n\n");
-}
 // MAIN
 int main() {
     // f1();
