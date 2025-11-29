@@ -1,194 +1,146 @@
 #include <stdio.h>
 
 /* Assignment:-22 Functions */
-
-//***************************************************************************************
-// Q6 - Factorial of a Number (Normal & Function Pointer)
-//***************************************************************************************
-
+/* ------------------------------------------------------------
+   ONE FACTORIAL FUNCTION FOR EVERYTHING (Normal + FP + nCr+nPr)
+   ------------------------------------------------------------ */
 int factorial(int *n)
 {
-
     int fact = 1;
-
     for (int i = 1; i <= *n; i++)
         fact *= i;
 
-    return fact;
+    return fact;  // return integer
 }
-/** (Using Normal Function Call) **/
+
+/* ------------------------------------------------------------
+   Q1 – Factorial (Normal Call)
+   ------------------------------------------------------------ */
 void f1()
 {
-    printf("Q1. (Using Normal Function Call)\n");
-    printf("Write a function to calculate factorial of a number. (TSRS)\n\n");
-    printf("Solution:-\n\n");
+    printf("\nQ1. Using Normal Function Call (Factorial)\n\n");
 
     int num = 5;
     int *ptr = &num;
 
-    if (ptr != NULL)
-    {
-        int result = factorial(ptr); //*** pass pointer
-        printf("Factorial of %d is %d\n", num, result);
-        printf("\n\n\n");
-    }
+    int result = factorial(ptr);
 
-    return;
+    printf("Factorial of %d is %d\n\n", num, result);
 }
-/** (Using Function Pointer) **/
+
+/* ------------------------------------------------------------
+   Q1.1 – Factorial (Function Pointer)
+   ------------------------------------------------------------ */
 void f1_()
 {
-    printf("Q1.1 (Using Function Pointer)\n");
-    printf("----> Write a function to print N terms of Fibonacci series using "
-           "FUNCTION POINTER. (TSRS)\n\n");
-    printf("Solution:-\n\n");
+    printf("\nQ1.1 Using Function Pointer to calculate (Factorial) of a number.\n\n");
 
     int num = 6;
     int *ptr = &num;
 
-    //*** Declare a function pointer
-    int (*fptr)(int *) = &factorial;
+    int (*fptr)(int *) = factorial;
 
-    //*** Call Circle() using function pointer
-    int res = (*fptr)(ptr);
+    int result = fptr(ptr);
 
-    printf("Factorial of %d is %d\n", num, res);
-    printf("\n\n\n");
+    printf("Factorial of %d is %d\n\n", num, result);
 }
 
-//***************************************************************************************
-// Q2 - Calculate numer of combinations (Normal & Function Pointer)
-//***************************************************************************************
-
-int Factorial(int *n)
-{
-    int i, Fact = 1;
-    for (i = 1; i <= *n; i++)
-        Fact *= i;
-    return Fact;
-}
-
+/* ------------------------------------------------------------
+   Q2 – Combination (nCr)
+   ------------------------------------------------------------ */
 int Combination(int *n, int *r)
 {
     int temp = *n - *r;
-    int nCr = Factorial(n) / (Factorial(r) * Factorial(&temp));
-    return nCr;
+
+    return factorial(n) /
+          (factorial(r) * factorial(&temp));
 }
 
 int f2()
 {
-    printf("Q2. Write a function to calculate the number of combinations one can"
-           "make from {n} items and {r} selected at a time. (TSRS)\n\n");
-    printf("Solution:-\n\n");
+    printf("\nQ2. Using normal to Callcalculate (Combination nCr)\n\n");
 
     int n = 5, r = 3;
-    int *ptr1 = &n;
-    int *ptr2 = &r;
 
-    int result = Combination(ptr1, ptr2);
-    printf("Total number of combinations (nCr) = %d\n", result);
+    int *p1 = &n;
+    int *p2 = &r;
 
-    printf("\n\n\n");
+    int result = Combination(p1, p2);
+
+    printf("nCr = %d\n\n", result);
+
     return 0;
 }
 
+/* ------------------------------------------------------------
+   Q2.1 – Function Pointer (Combination)
+   ------------------------------------------------------------ */
 int f2_()
 {
-    printf("Q2.1 ----> Write a function to calculate number of combinations using"
-           "FUNCTION POINTER. (TSRS)\n\n");
-    printf("Solution:-\n\n");
+    printf("\nQ2.1 Function Pointer (Combination nCr)\n\n");
 
     int n = 6, r = 4;
-    int *ptr1 = &n;
-    int *ptr2 = &r;
 
-    int (*fptr)(int *, int *) = &Combination;
-    int result = fptr(ptr1, ptr2);
+    int *p1 = &n;
+    int *p2 = &r;
 
-    printf("Total number of combinations (nCr) = %d\n", result);
+    int (*fptr)(int *, int *) = Combination;
 
-    printf("\n\n\n");
+    int result = fptr(p1, p2);
+
+    printf("nCr = %d\n\n", result);
+
     return 0;
 }
 
-//***************************************************************************************
-// Q2 - Calculate numer of arrangements (Normal & Function Pointer)
-//***************************************************************************************
-
-int facto(int *n)
-{
-
-    int i, fact = 1;
-
-    for (i = 1; i <= *n; i++)
-        fact *= i;
-
-    return fact;
-}
-
+/* ------------------------------------------------------------
+   Q3 – Permutation (nPr)
+   ------------------------------------------------------------ */
 int permutation(int *n, int *r)
 {
     int temp = *n - *r;
-    int nPr = facto(n) / facto(&temp);
-    return nPr;
+    return factorial(n) / factorial(&temp);
 }
 
-/** (Using Normal Function Call) **/
 void f3()
 {
-    printf("Q3.1 ----> Write a function to calculate number of permutations using"
-           " Normal Function Call. (TSRS)\n\n"); // fixed description
-    printf("Solution:-\n\n");
+    printf("\nQ3. Normal Call (Permutation nPr)\n\n");
 
-    //*** Define variables ***/
     int n = 5, r = 3;
 
-    //*** Create pointers to n and r ***/
-    int *ptr1 = &n;
-    int *ptr2 = &r;
+    int *p1 = &n;
+    int *p2 = &r;
 
-    //*** Call Circle() using function pointer and store the result
-    int result = permutation(ptr1, ptr2);
+    int result = permutation(p1, p2);
 
-    printf("Total number of permutations (nPr) = %d\n", result);
-
-    printf("\n\n\n");
+    printf("nPr = %d\n\n", result);
 }
+
 void f3_()
 {
-    printf("Q3.1 ----> Write a function to calculate number of permutations using"
-           "FUNCTION POINTER. (TSRS)\n\n");
-
-    printf("Solution:-\n\n");
+    printf("\nQ3.1 Function Pointer (Permutation nPr)\n\n");
 
     int n = 6, r = 4;
 
-    int *ptr1 = &n;
-    int *ptr2 = &r;
+    int *p1 = &n;
+    int *p2 = &r;
 
-    //*** Declare a function pointer
-    int (*fptr)(int *, int *) = &permutation;
+    int (*fptr)(int *, int *) = permutation;
 
-    //*** Call Circle() using function pointer
-    int result = fptr(ptr1, ptr2);
+    int result = fptr(p1, p2);
 
-    printf("Total number of permutations (nPr) = %d\n", result);
-    printf("\n\n\n");
+    printf("nPr = %d\n\n", result);
 }
 
-//***************************************************************************************
-// Q4 - Check whether a digit belongs to a given number (Normal & Function
-// Pointer)
-//***************************************************************************************
+/* ------------------------------------------------------------
+   Q4 – Check if digit belongs to number
+   ------------------------------------------------------------ */
+int belongs(int *n, int *digit)
+{
+    int temp = *n;
 
-//*** Function to check if digit belongs to number
-//*****************************************
-//           BELONGS FUNCTION
-//*****************************************
-int belongs(int *n, int *digit) {
-    int temp = *n;  // Correct: Copy number value
-
-    while (temp != 0) {
+    while (temp != 0)
+    {
         if (temp % 10 == *digit)
             return 1;
 
@@ -197,12 +149,9 @@ int belongs(int *n, int *digit) {
     return 0;
 }
 
-//*****************************************
-//      USING NORMAL FUNCTION CALL
-//*****************************************
-void f4() {
-    printf("Q4. (Using Normal Function Call)\n");
-    printf("Write a function to check if a digit belongs to a number. (TSRN)\n\n");
+void f4()
+{
+    printf("\nQ4. Normal Call (Digit Belongs)\n\n");
 
     int num = 4325;
     int digit = 3;
@@ -210,52 +159,41 @@ void f4() {
     int *p = &num;
     int *q = &digit;
 
-    int store = belongs(p, q);
+    int result = belongs(p, q);
 
-    if (store == 1)
-        printf("%d belongs to %d\n", *q, num);
+    if (result)
+        printf("%d belongs to %d\n\n", digit, num);
     else
-        printf("%d does not belong to %d\n", *q, num);
-
-    printf("\n\n\n");
+        printf("%d does NOT belong to %d\n\n", digit, num);
 }
 
-//*****************************************
-//        USING FUNCTION POINTER
-//*****************************************
-void f4_() {
-    printf("Q4.1 (Using Function Pointer)\n");
-    printf("Write a function to check if a digit belongs to a number using FUNCTION POINTER. (TSRN)\n\n");
+void f4_()
+{
+    printf("\nQ4.1 Function Pointer (Digit Belongs)\n\n");
 
     int num = 4325;
     int digit = 3;
 
-    int *p = &num;
-    int *q = &digit;
+    int (*fptr)(int *, int *) = belongs;
 
-    int (*fptr)(int *, int *) = &belongs;
+    int result = fptr(&num, &digit);
 
-    int store = fptr(p, q);
-
-    if (store == 1)
-        printf("%d belongs to %d\n", *q, num);
+    if (result)
+        printf("%d belongs to %d\n\n", digit, num);
     else
-        printf("%d does not belong to %d\n", *q, num);
-
-    printf("\n\n\n");
+        printf("%d does NOT belong to %d\n\n", digit, num);
 }
 
-//*****************************************
-//         PRIME FACTOR FUNCTION
-//*****************************************
+/* ------------------------------------------------------------
+   Q5 – Print Prime Factors
+   ------------------------------------------------------------ */
 void PrimeFactor(int *n)
 {
-    int temp = *n;  // copy original
-    int i;
+    int temp = *n;
 
-    printf("Prime factors of %d are: ", *n);
+    printf("Prime factors of %d: ", temp);
 
-    for (i = 2; i <= temp; i++)
+    for (int i = 2; i <= temp; i++)
     {
         while (temp % i == 0)
         {
@@ -263,45 +201,32 @@ void PrimeFactor(int *n)
             temp /= i;
         }
     }
-
-    printf("1.");
-
-    int j = 1;
-    while (j <= 4)
-    {
-        printf("\n");
-        j++;
-    }
+    printf("1.\n\n");
 }
 
-//*****************************************
-//    CALL PRIME FACTOR (NORMAL CALL)
-//*****************************************
 void f5()
 {
-    printf("Q5. (Using Normal Function Call)\n");
-    printf("Write a function to print all prime factors. Example: 36 → 2,2,3,3,1. (TSRN)\n\n");
+    printf("\nQ5. Normal Call (Prime Factors)\n\n");
 
     int num = 36;
+
     PrimeFactor(&num);
 }
 
-//*****************************************
-//    CALL PRIME FACTOR (FUNCTION POINTER)
-//*****************************************
 void f5_()
 {
-    printf("Q5.1 (Using Function Pointer)\n");
-    printf("Prime factor using FUNCTION POINTER. (TSRN)\n\n");
+    printf("\nQ5.1 Function Pointer (Prime Factors)\n\n");
 
     int num = 36;
 
-    void (*fptr)(int *) = &PrimeFactor;
+    void (*fptr)(int *) = PrimeFactor;
+
     fptr(&num);
 }
-//***************************************************************************************
-// MAIN FUNCTION
-//***************************************************************************************
+
+/* ------------------------------------------------------------
+   MAIN
+   ------------------------------------------------------------ */
 int main()
 {
     f1();
@@ -314,5 +239,6 @@ int main()
     f4_();
     f5();
     f5_();
+
     return 0;
 }
