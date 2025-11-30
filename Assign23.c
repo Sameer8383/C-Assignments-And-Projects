@@ -80,7 +80,10 @@ void f2()
     int *p1 = &num1, *p2 = &num2;
 
     int result = hcf(p1, p2); // Normal function call
-    printf("HCF of %d and %d is %d\n\n\n", num1, num2, result);
+    printf("HCF of %d and %d is %d", num1, num2, result);
+
+    for(int Q = 1; Q <= 4; Q++)
+        printf("\n");
 }
 
 //*****************************************
