@@ -46,8 +46,8 @@ void f1_()
     void (*fptr)(int *) = &natural;
     (*fptr)(ptr);
 
-    printf("\n\n\n\n\n");
-}
+   for(int Q = 1; Q <= 4; Q++)
+        printf("\n");}
 
 //***************************************************************************************
 // Q2 - Print first N natural number using Recursion in reverse order.(Normal & Function Pointer)
