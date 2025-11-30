@@ -29,7 +29,8 @@ void f1()
 
     natural(ptr);
 
-    printf("\n\n\n\n\n");
+    for(int Q = 1; Q <= 4; Q++)
+        printf("\n");
 }
 
 void f1_()

@@ -47,7 +47,10 @@ void f1_()
     // Call LCM using function pointer
     int result = fptr(p1, p2);
 
-    printf("LCM of %d and %d is %d\n\n\n\n", num1, num2, result);
+    printf("LCM of %d and %d is %d", num1, num2, result);
+
+    for(int Q = 1; Q <= 4; Q++)
+        printf("\n");
 }
 //*****************************************
 //           HCF FUNCTION

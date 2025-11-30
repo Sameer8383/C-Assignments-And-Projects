@@ -198,7 +198,8 @@ void f4_()
     else
         (*fptr)(ptr);
 
-    printf("\n\n\n\n\n");
+    for(int Q = 1; Q <= 4; Q++)
+        printf("\n");
 }
 //***************************************************************************************
 // Q5 - Print Reverse of a given number using Recursion (Normal & Function Pointer)
