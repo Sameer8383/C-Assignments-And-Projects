@@ -247,8 +247,8 @@ void f4()
 
     Armstrong(ptr);
 
-    printf("\n\n\n\n\n");
-}
+   for(int Q = 1; Q <= 4; Q++)
+        printf("\n");}
 
 /** (Using Function Pointer) **/
 void f4_()
@@ -305,7 +305,8 @@ void f5()
     }
     printf(" = %d\n", result);
 
-    printf("\n\n\n\n\n");
+        printf("\n\n\n\n\n");
+
 }
 
 /** (Using Function Pointer) **/
