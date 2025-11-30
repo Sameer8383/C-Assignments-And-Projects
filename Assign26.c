@@ -178,7 +178,8 @@ void f4()
     else
         octal(ptr);
 
-    printf("\n\n\n\n\n");
+    for (int Q = 1; Q <= 4; Q++)
+        printf("\n");
 }
 
 void f4_()
@@ -198,7 +199,7 @@ void f4_()
     else
         (*fptr)(ptr);
 
-    for(int Q = 1; Q <= 4; Q++)
+    for (int Q = 1; Q <= 4; Q++)
         printf("\n");
 }
 //***************************************************************************************
@@ -232,7 +233,8 @@ void f5()
     else
         reverse(ptr);
 
-    printf("\n\n\n\n\n");
+    for(int Q = 1; Q <= 4; Q++)
+        printf("\n");
 }
 
 void f5_()
@@ -251,7 +253,8 @@ void f5_()
     else
         (*fptr)(ptr);
 
-    printf("\n\n\n\n\n");
+    for(int Q = 1; Q <= 4; Q++)
+        printf("\n");
 }
 
 //***************************************************************************************
