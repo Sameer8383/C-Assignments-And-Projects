@@ -74,7 +74,8 @@ void f2()
     printf("N natural number series [in reverse form]: ");
 
     NaturalReverse(ptr);
-    printf("\n\n\n\n\n");
+    for(int Q = 1; Q <= 4; Q++)
+        printf("\n");
 }
 
 void f2_()
