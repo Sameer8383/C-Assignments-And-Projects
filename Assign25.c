@@ -217,7 +217,6 @@ void f5_()
 
     int n = 10;
     int *ptr = &n;
-    printf("N Even natural numbers: ");
 
     void (*fptr)(int *) = &NaturalEven;
     (*fptr)(ptr);

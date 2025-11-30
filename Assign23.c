@@ -47,11 +47,8 @@ void f1_()
     // Call LCM using function pointer
     int result = fptr(p1, p2);
 
-    printf("LCM of %d and %d is %d\n\n\n", num1, num2, result);
+    printf("LCM of %d and %d is %d\n\n\n\n", num1, num2, result);
 }
-
-#include <stdio.h>
-
 //*****************************************
 //           HCF FUNCTION
 //*****************************************
@@ -100,7 +97,7 @@ void f2_()
     // Call HCF using function pointer
     int result = fptr(p1, p2);
 
-    printf("HCF of %d and %d is %d\n\n\n", num1, num2, result);
+    printf("HCF of %d and %d is %d\n\n\n\n", num1, num2, result);
 }
 
 //*****************************************
@@ -154,9 +151,9 @@ void f3_()
     int result = fptr(p);
 
     if (result)
-        printf("%d is a prime number.\n\n\n", num);
+        printf("%d is a prime number.\n\n\n\n", num);
     else
-        printf("%d is not a prime number.\n\n\n", num);
+        printf("%d is not a prime number.\n\n\n\n", num);
 }
 
 //*****************************************
@@ -209,7 +206,7 @@ void f4_()
     int (*fptr)(int *) = &nextPrime;
     int next = fptr(p);
 
-    printf("Next prime after %d is %d\n\n", num, next);
+    printf("Next prime after %d is %d\n\n\n\n", num, next);
 }
 
 //*****************************************

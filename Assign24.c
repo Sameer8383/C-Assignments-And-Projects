@@ -7,25 +7,31 @@
 // Q1 - Find Prime b/w 2 given numbers (Normal & Function Pointer)
 //***************************************************************************************
 
-void Prime(int *n, int *num) {
+void Prime(int *n, int *num)
+{
     int i, j, flag;
 
-    for(i = *n+1; i <= *num; i++) {
+    for (i = *n + 1; i <= *num; i++)
+    {
         flag = 1;
-        for(j = 2; j * j <= i; j++) {
-            if(i % j == 0) {
+        for (j = 2; j * j <= i; j++)
+        {
+            if (i % j == 0)
+            {
                 flag = 0;
                 break;
             }
         }
-        if(flag == 1 && i > 1) {
+        if (flag == 1 && i > 1)
+        {
             printf("%d ", i);
         }
     }
     printf("\n");
 }
 
-void f1() {
+void f1()
+{
     printf("Q1. (Using Normal Function Call)\n");
     printf("Write a function to print all Prime numbers between two given numbers. (TSRN)\n\n");
     printf("Solution:-\n\n");
@@ -34,15 +40,22 @@ void f1() {
     int *ptr = &a;
     int *ptr1 = &b;
 
-    if(ptr != NULL) {
+    printf("print all Prime numbers between %d and %d is: ", *(ptr), *(ptr));
+
+    if (ptr != NULL)
+    {
         Prime(ptr, ptr1);
-    } else {
+    }
+    else
+    {
         printf("ptr is a NULL pointer.\n");
     }
+    ptr = NULL;
     printf("\n\n\n\n\n");
 }
 
-void f1_() {
+void f1_()
+{
     printf("Q1.1 (Using Function Pointer)\n");
     printf("----> Write a function to print all Prime numbers between two given numbers using FUNCTION POINTER. (TSRS)\n\n");
     printf("Solution:-\n\n");
@@ -50,6 +63,7 @@ void f1_() {
     int a = 3, b = 15;
     int *ptr = &a;
     int *ptr1 = &b;
+    printf("print all Prime numbers between %d and %d is: ", *(ptr), *(ptr));
 
     void (*fptr)(int *, int *) = &Prime;
     (*fptr)(ptr, ptr1);
@@ -61,11 +75,13 @@ void f1_() {
 // Q2 - Print 1st N term of Fibonacci Series(Normal & Function Pointer)
 //***************************************************************************************
 
-void fibonacci(int *n) {
+void fibonacci(int *n)
+{
     int t1 = 0, t2 = 1, next;
 
     printf("Fibonacci Series: ");
-    for (int i = 1; i <= *n; i++) {
+    for (int i = 1; i <= *n; i++)
+    {
         printf("%d ", t1);
         next = t1 + t2;
         t1 = t2;
@@ -75,7 +91,8 @@ void fibonacci(int *n) {
 }
 
 /** (Using Normal Function Call) **/
-void f2() {
+void f2()
+{
     printf("Q2. (Using Normal Function Call)\n");
     printf("Calculate and print Fibonacci Series up to N terms (TSRS)\n\n");
     printf("Solution:-\n\n");
@@ -83,9 +100,13 @@ void f2() {
     int n = 5;
     int *ptr = &n;
 
-    if (ptr != NULL) {
+    printf("Fibonacci Series up to N terms: ");
+    if (ptr != NULL)
+    {
         fibonacci(ptr);
-    } else {
+    }
+    else
+    {
         printf("\nptr is a NULL pointer.\n");
     }
 
@@ -93,13 +114,15 @@ void f2() {
 }
 
 /** (Using Function Pointer) **/
-void f2_() {
+void f2_()
+{
     printf("Q2.1 (Using Function Pointer)\n");
     printf("----> Calculate and print Fibonacci Series up to N terms using FUNCTION POINTER. (TSRN)\n\n");
     printf("Solution:-\n\n");
 
     int n = 8;
     int *ptr = &n;
+    printf("Fibonacci Series up to N terms: ");
 
     void (*fptr)(int *) = &fibonacci;
     (*fptr)(ptr);
@@ -111,27 +134,31 @@ void f2_() {
 // Q3 - Print Pascal's Triangle (TSRN - Take Something, Return Nothing)
 //***************************************************************************************
 
-int factorial(int n) {   // 鉁� single factorial used everywhere
+int factorial(int n)
+{ // 鉁� single factorial used everywhere
     int fact = 1;
-    for(int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++)
         fact *= i;
     return fact;
 }
 
-int combination(int n, int r) {
+int combination(int n, int r)
+{
     return factorial(n) / (factorial(r) * factorial(n - r));
 }
 
 //*** Function to print Pascal's Triangle ***
-void PascalTriangle(int *rows) {
+void PascalTriangle(int *rows)
+{
     printf(">>> Pascal's Triangle for %d rows:\n\n", *rows);
 
-    for(int i = 0; i < *rows; i++) {
-        for(int j = 0; j < *rows - i - 1; j++)
-            printf("  ");  // Leading spaces
+    for (int i = 0; i < *rows; i++)
+    {
+        for (int j = 0; j < *rows - i - 1; j++)
+            printf("  "); // Leading spaces
 
-        for(int j = 0; j <= i; j++)
-            printf("%4d", combination(i, j));  // Numbers in row
+        for (int j = 0; j <= i; j++)
+            printf("%4d", combination(i, j)); // Numbers in row
 
         printf("\n");
     }
@@ -139,7 +166,8 @@ void PascalTriangle(int *rows) {
 }
 
 //*** Normal Function Call ***
-void f3() {
+void f3()
+{
     printf("Q3. (Normal Function Call - TSRN)\n");
     printf("Print Pascal's Triangle up to N rows. (TSRN)\n\n");
     printf("Solution:-\n\n");
@@ -147,14 +175,15 @@ void f3() {
     int n = 5;
     int *ptr = &n;
 
-    if(ptr != NULL)
+    if (ptr != NULL)
         PascalTriangle(ptr);
     else
         printf("Pointer is NULL!\n");
 }
 
 //*** Function Pointer Call ***
-void f3_() {
+void f3_()
+{
     printf("Q3.1 (Function Pointer Call - TSRN)\n");
     printf("Print Pascal's Triangle up to N rows using FUNCTION POINTER. (TSRN)\n\n");
     printf("Solution:-\n\n");
@@ -170,43 +199,51 @@ void f3_() {
 // Q4 - Print all Armstrong numbers up to N (Normal & Function Pointer)
 //***************************************************************************************
 
-void Armstrong(int *n) {   // 鉁� changed to void
+void Armstrong(int *n)
+{ // 鉁� changed to void
     int i, sum, count, temp, rem;
 
-    for (i = 1; i <= *n; i++) {
+    for (i = 1; i <= *n; i++)
+    {
         sum = 0;
         count = 0;
         temp = i;
 
         // Count digits
         int t = temp;
-        while (t != 0) {
+        while (t != 0)
+        {
             count++;
             t /= 10;
         }
 
         // Calculate sum of powers
         t = temp;
-        while (t != 0) {
+        while (t != 0)
+        {
             rem = t % 10;
             sum += pow(rem, count);
             t /= 10;
         }
 
-        if (sum == i) {
+        if (sum == i)
+        {
             printf("%d ", i);
         }
     }
 }
 
 /** (Using Normal Function Call) **/
-void f4() {
+void f4()
+{
     printf("Q4. Write a function to print all Armstrong numbers up to N using"
            " Normal Function Call. (TSRN)\n\n");
     printf("Solution:-\n\n");
 
-    int n = 1000;   // limit
+    int n = 1000; // limit
     int *ptr = &n;
+
+    printf("print all Armstrong numbers up to N: ");
 
     Armstrong(ptr);
 
@@ -214,13 +251,15 @@ void f4() {
 }
 
 /** (Using Function Pointer) **/
-void f4_() {
+void f4_()
+{
     printf("Q4.1 ----> Write a function to print all Armstrong numbers up to N using"
            " FUNCTION POINTER. (TSRN)\n\n");
     printf("Solution:-\n\n");
 
     int n = 1000;
     int *ptr = &n;
+    printf("print all Armstrong numbers up to N: ");
 
     void (*fptr)(int *) = &Armstrong;
     fptr(ptr);
@@ -232,10 +271,12 @@ void f4_() {
 // Q5 - Sum of Series (1!/1 + 2!/2 + 3!/3 + ... + n!/n) (Normal & Function Pointer)
 //***************************************************************************************
 
-int SeriesSum(int *n) {   // 鉁� TSRS
+int SeriesSum(int *n)
+{ // 鉁� TSRS
     int i, sum = 0;
 
-    for (i = 1; i <= *n; i++) {
+    for (i = 1; i <= *n; i++)
+    {
         sum = sum + factorial(i) / i;
     }
 
@@ -243,18 +284,21 @@ int SeriesSum(int *n) {   // 鉁� TSRS
 }
 
 /** (Using Normal Function Call) **/
-void f5() {
+void f5()
+{
     printf("Q5. Write a function to find the sum of first N terms of the series "
            "1!/1 + 2!/2 + 3!/3 + ... + n!/n using Normal Function Call. (TSRS)\n\n");
     printf("Solution:-\n\n");
 
-    int n = 5;   // you can change value
+    int n = 5; // you can change value
     int *ptr = &n;
 
+    printf("sum of first N terms of the series: ");
     int result = SeriesSum(ptr);
 
-    for(int i=1; i<=*ptr; i++) {
-        if(i == *ptr)
+    for (int i = 1; i <= *ptr; i++)
+    {
+        if (i == *ptr)
             printf("%d!/%d", i, i);
         else
             printf("%d!/%d + ", i, i);
@@ -265,19 +309,22 @@ void f5() {
 }
 
 /** (Using Function Pointer) **/
-void f5_() {
+void f5_()
+{
     printf("Q5.1 ----> Write a function to find the sum of first N terms of the series "
            "1!/1 + 2!/2 + 3!/3 + ... + n!/n using FUNCTION POINTER. (TSRS)\n\n");
     printf("Solution:-\n\n");
 
     int n = 5;
     int *ptr = &n;
+    printf("sum of first N terms of the series: ");
 
     int (*fptr)(int *) = &SeriesSum;
     int result = fptr(ptr);
 
-    for(int i=1; i<=*ptr; i++) {
-        if(i == *ptr)
+    for (int i = 1; i <= *ptr; i++)
+    {
+        if (i == *ptr)
             printf("%d!/%d", i, i);
         else
             printf("%d!/%d + ", i, i);
@@ -290,16 +337,17 @@ void f5_() {
 //***************************************************************************************
 // MAIN FUNCTION
 //***************************************************************************************
-int main() {
-  f1();
-  f1_();
-  f2();
-  f2_();
-  f3();
-  f3_();
-  f4();
-  f4_();
-  f5();
-  f5_();
-  return 0;
+int main()
+{
+    f1();
+    f1_();
+    f2();
+    f2_();
+    f3();
+    f3_();
+    f4();
+    f4_();
+    f5();
+    f5_();
+    return 0;
 }
