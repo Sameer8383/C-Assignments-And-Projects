@@ -29,7 +29,7 @@ void f1()
 
     natural(ptr);
 
-    for(int Q = 1; Q <= 4; Q++)
+    for (int Q = 1; Q <= 4; Q++)
         printf("\n");
 }
 
@@ -46,8 +46,9 @@ void f1_()
     void (*fptr)(int *) = &natural;
     (*fptr)(ptr);
 
-   for(int Q = 1; Q <= 4; Q++)
-        printf("\n");}
+    for (int Q = 1; Q <= 4; Q++)
+        printf("\n");
+}
 
 //***************************************************************************************
 // Q2 - Print first N natural number using Recursion in reverse order.(Normal & Function Pointer)
@@ -74,7 +75,7 @@ void f2()
     printf("N natural number series [in reverse form]: ");
 
     NaturalReverse(ptr);
-    for(int Q = 1; Q <= 4; Q++)
+    for (int Q = 1; Q <= 4; Q++)
         printf("\n");
 }
 
@@ -219,11 +220,13 @@ void f5_()
 
     int n = 10;
     int *ptr = &n;
+    printf("N Even natural numbers: ");
 
     void (*fptr)(int *) = &NaturalEven;
     (*fptr)(ptr);
 
-    printf("\n\n\n\n\n");
+    for (int q = 1; q <= 4; q++)
+        printf("\n");
 }
 
 //***************************************************************************************
