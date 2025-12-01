@@ -22,7 +22,7 @@ void NaturalEven(int *n)
 
 void f1()
 {
-    printf("Q1. (Using Normal Function Call)\n");
+    printf("\nQ1. (Using Normal Function Call)\n");
     printf("Write a function to print first N Even natural numbers in Reverse Order using Recursion.\n\n");
     printf("Solution:-\n\n");
 
