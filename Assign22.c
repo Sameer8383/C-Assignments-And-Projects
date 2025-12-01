@@ -10,7 +10,7 @@ int factorial(int *n)
     for (int i = 1; i <= *n; i++)
         fact *= i;
 
-    return fact;  // return integer
+    return fact; // return integer
 }
 
 /* ------------------------------------------------------------
@@ -20,6 +20,7 @@ void f1()
 {
     printf("\nQ1. Using Normal Function Call (Factorial)\n\n");
 
+    printf("Solution:-\n\n");
     int num = 5;
     int *ptr = &num;
 
@@ -34,6 +35,7 @@ void f1()
 void f1_()
 {
     printf("\nQ1.1 Using Function Pointer to calculate (Factorial) of a number.\n\n");
+    printf("Solution:-\n\n");
 
     int num = 6;
     int *ptr = &num;
@@ -53,12 +55,13 @@ int Combination(int *n, int *r)
     int temp = *n - *r;
 
     return factorial(n) /
-          (factorial(r) * factorial(&temp));
+           (factorial(r) * factorial(&temp));
 }
 
 int f2()
 {
     printf("\nQ2. Using normal to Callcalculate (Combination nCr)\n\n");
+    printf("Solution:-\n\n");
 
     int n = 5, r = 3;
 
@@ -78,6 +81,7 @@ int f2()
 int f2_()
 {
     printf("\nQ2.1 Function Pointer (Combination nCr)\n\n");
+    printf("Solution:-\n\n");
 
     int n = 6, r = 4;
 
@@ -105,6 +109,7 @@ int permutation(int *n, int *r)
 void f3()
 {
     printf("\nQ3. Normal Call (Permutation nPr)\n\n");
+    printf("Solution:-\n\n");
 
     int n = 5, r = 3;
 
@@ -119,6 +124,7 @@ void f3()
 void f3_()
 {
     printf("\nQ3.1 Function Pointer (Permutation nPr)\n\n");
+    printf("Solution:-\n\n");
 
     int n = 6, r = 4;
 
@@ -152,6 +158,7 @@ int belongs(int *n, int *digit)
 void f4()
 {
     printf("\nQ4. Normal Call (Digit Belongs)\n\n");
+    printf("Solution:-\n\n");
 
     int num = 4325;
     int digit = 3;
@@ -170,6 +177,7 @@ void f4()
 void f4_()
 {
     printf("\nQ4.1 Function Pointer (Digit Belongs)\n\n");
+    printf("Solution:-\n\n");
 
     int num = 4325;
     int digit = 3;
@@ -207,6 +215,7 @@ void PrimeFactor(int *n)
 void f5()
 {
     printf("\nQ5. Normal Call (Prime Factors)\n\n");
+    printf("Solution:-\n\n");
 
     int num = 36;
 
@@ -216,14 +225,13 @@ void f5()
 void f5_()
 {
     printf("\nQ5.1 Function Pointer (Prime Factors)\n\n");
+    printf("Solution:-\n\n");
 
     int num = 36;
 
-    void (*fptr)(int *) = PrimeFactor;
-
-    fptr(&num);
+    void (*fptr)(int *) = &PrimeFactor;
+    (*fptr)(&num);
 }
-
 /* ------------------------------------------------------------
    MAIN
    ------------------------------------------------------------ */
