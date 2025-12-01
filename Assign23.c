@@ -49,7 +49,7 @@ void f1_()
 
     printf("LCM of %d and %d is %d", num1, num2, result);
 
-    for(int Q = 1; Q <= 4; Q++)
+    for (int Q = 1; Q <= 4; Q++)
         printf("\n");
 }
 //*****************************************
@@ -82,7 +82,7 @@ void f2()
     int result = hcf(p1, p2); // Normal function call
     printf("HCF of %d and %d is %d", num1, num2, result);
 
-    for(int Q = 1; Q <= 4; Q++)
+    for (int Q = 1; Q <= 4; Q++)
         printf("\n");
 }
 
@@ -130,6 +130,7 @@ void f3()
 {
     printf("Q3. (Using Normal Function Call)\n");
     printf("Write a function to check if a number is prime. (TSRS)\n\n");
+    printf("Solution:-\n\n");
 
     int num = 8;
     int *p = &num;
@@ -148,6 +149,7 @@ void f3_()
 {
     printf("Q3.1 (Using Function Pointer)\n");
     printf("Write a function to check if a number is prime using FUNCTION POINTER. (TSRS)\n\n");
+    printf("Solution:-\n\n");
 
     int num = 29;
     int *p = &num;
@@ -191,7 +193,8 @@ int nextPrime(int *n)
 //*** (Using Normal Function Call) ***
 void f4()
 {
-    printf("Q4. Find (Next Prime - Normal Function Call)\n");
+    printf("Q4. Find (Next Prime - Normal Function Call)\n\n");
+    printf("Solution:-\n\n");
 
     int num = 7;
     int *p = &num;
@@ -204,7 +207,8 @@ void f4()
 //*** (Using Function Pointer) ***
 void f4_()
 {
-    printf("Q4.1 Find (Next Prime - Function Pointer)\n");
+    printf("Q4.1 Find (Next Prime - Function Pointer)\n\n");
+    printf("Solution:-\n\n");
 
     int num = 29;
     int *p = &num;
@@ -250,7 +254,8 @@ void firstNPrimeNumbers(int *n)
 //*****************************************
 void f5()
 {
-    printf("Q5. Print first N prime numbers (Normal Function Call)\n");
+    printf("Q5. Print first N prime numbers (Normal Function Call)\n\n");
+    printf("Solution:-\n\n");
 
     int n = 10;
     int *p = &n;
@@ -266,7 +271,8 @@ void f5()
 //*****************************************
 void f5_()
 {
-    printf("Q5.1 Print first N prime numbers (Function Pointer)\n");
+    printf("Q5.1 Print first N prime numbers (Function Pointer)\n\n");
+    printf("Solution:-\n\n");
 
     int n = 10;
     int *p = &n;
