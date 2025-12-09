@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
+// Assignment : 40 [ Strings & Functions ]
+// [Using normal function & pointer function call]
+
 // =========================== Q1 ===========================
 // Store strings in a 2D array
 void inputStrings(char str[][50], int n)
