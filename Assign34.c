@@ -105,7 +105,7 @@ void f3()
     printf(" Q3: Count occurrences of vowels (Normal Function Call)\n");
     printf("==============================================================\n\n");
 
-    char str[100] = "Hello World", v[10] = "aeiouAEIOU";
+    char str[50] = "Hello World", v[20] = "aeiouAEIOU";
 
     int reserve = vowels(str, v);
     printf("\nOccurrences of vowels in \"%s\" is %d\n", str, reserve);
@@ -118,7 +118,7 @@ void f3_()
     printf(" Q3.1: Count occurrences of vowels (Pointer Function Call)\n");
     printf("==============================================================\n\n");
 
-    char str[100] = "Hello World", v[10] = "aeiouAEIOU";
+    char str[50] = "Hello World", v[20] = "aeiouAEIOU";
     char *ptr = str, *vptr = v;
 
     int (*fptr)(char *, char *) = &vowels;
