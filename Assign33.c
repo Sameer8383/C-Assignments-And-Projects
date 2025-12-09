@@ -178,12 +178,13 @@ void displayTransposeMatrix(int *arr1)
 
 // ========================= Q3: Transpose of Matrix =========================
 // Normal Function Call with optional user input
-void f3() {
+void f3()
+{
     printf("==============================================================\n");
     printf(" Q3: Transpose of a Matrix (Normal Function Call)\n");
     printf("==============================================================\n\n");
 
-    int a[3][3] = { {1,2,3}, {4,5,6}, {7,8,9} }; // default matrix
+    int a[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}; // default matrix
     int b[3][3];
     int *p = &a[0][0], *q = &b[0][0];
     char choice[4];
@@ -191,7 +192,8 @@ void f3() {
     printf("Do you want to enter your own matrix? (Yes/No): ");
     scanf("%3s", choice);
 
-    if (strcmp(choice, "Yes") == 0 || strcmp(choice, "yes") == 0) {
+    if (strcmp(choice, "Yes") == 0 || strcmp(choice, "yes") == 0)
+    {
         printf("\nEnter elements of Matrix A (3x3):\n");
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
@@ -209,25 +211,36 @@ void f3() {
     printf("\n==================== END OF PROGRAM 3 ====================\n\n\n");
 }
 
-void f3_() {
+void f3_()
+{
     printf("==============================================================\n");
     printf(" Q3.1: Transpose of a Matrix (Pointer Function Call)\n");
     printf("==============================================================\n\n");
 
-    int a[3][3] = { {1,2,3}, {4,5,6}, {7,8,9} }; // default matrix
+    int a[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}; // default matrix
     int b[3][3];
     int *p = &a[0][0], *q = &b[0][0];
     char choice[4];
+    int entered = 0;
 
-    printf("Do you want to enter your own matrix? (Yes/No): ");
-    scanf("%3s", choice);
+    if (!entered)
+    {
+        printf("Do you want to enter your own matrix? (Yes/No): ");
+        scanf("%3s", choice);
 
-    if (strcmp(choice, "Yes") == 0 || strcmp(choice, "yes") == 0) {
-        printf("\nEnter elements of Matrix A (3x3):\n");
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
-                scanf("%d", (p + i * 3 + j));
+        if (strcmp(choice, "Yes") == 0 || strcmp(choice, "yes") == 0)
+        {
+            printf("\nEnter elements of Matrix A (3x3):\n");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    scanf("%d", (p + i * 3 + j));
+                }
+            }
+        }
     }
+    entered = 1;
 
     void (*fptr_transposeMatrix)(int *, int *) = transposeMatrix;
     void (*fptr_displayTransposeMatrix)(int *) = displayTransposeMatrix;
