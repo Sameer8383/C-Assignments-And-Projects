@@ -48,7 +48,9 @@ void f1()
     printf("\nSum of Matrix A and B:\n");
     displayMatrix(c);
 
-    printf("\n==================== END OF PROGRAM 1 ====================\n\n\n");
+    printf("\n==================== END OF PROGRAM 1 ====================");
+    for (int i = 0; i < 3; i++)
+        printf("\n");
 }
 
 // Pointer Function Call
