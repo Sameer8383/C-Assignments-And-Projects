@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+// Assignment : 39 [ Strings & Functions ]
+// [Using normal function & pointer function call]
 
 // =========================== Q1 ===========================
 void sortString(char *str)
