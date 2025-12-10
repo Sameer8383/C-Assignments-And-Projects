@@ -1,152 +1,136 @@
 #include <stdio.h>
 #include <string.h>
 
-// Assignment 44.
-// Structures
-
-typedef struct
+struct Employee
 {
     int id;
-    char name[20];
+    char name[50];
     float salary;
-} Employee;
+};
 
-// Function to input employee data
-Employee inputEmployeeData()
+void inputEmployee(struct Employee *e, int number)
 {
-    Employee emp;
-    printf("Enter Employee ID: ");
-    scanf("%d", &emp.id);
-    printf("Enter Employee Name: ");
-    getchar(); // consume newline
-    fgets(emp.name, 20, stdin);
-    emp.name[strcspn(emp.name, "\n")] = 0; // remove newline
+    printf("\n+-----------------------------+\n");
+    printf("| Enter details for Employee %2d |\n", number);
+    printf("+-----------------------------+\n");
+    printf("Enter Employee ID   : ");
+    scanf("%d", &e->id);
+    printf("Enter Employee Name : ");
+    scanf("%s", e->name);
     printf("Enter Employee Salary: ");
-    scanf("%f", &emp.salary);
-
-    return emp;
+    scanf("%f", &e->salary);
 }
 
-// Function to display employee in table format
-void displayEmployeeData(Employee emp)
+void displayEmployee(struct Employee e)
 {
-    printf("   %-12s %-11d %.2f\n", emp.name, emp.id, emp.salary);
+    printf("| %-15s %-10d %-12.2f |\n", e.name, e.id, e.salary);
 }
 
-// Program 1: Input & display single employee
-void f1()
+void f1(struct Employee emp[], int n)
 {
-    printf("******************************************************************************\n");
-    printf("======> Using normal function call <======\n");
-    printf("Q1. Input & display Employee data in table format.\n");
-    printf("******************************************************************************\n\n");
-
-    Employee emp = inputEmployeeData();
-
-    printf("\n   Name          ID          Salary\n");
-    printf("----------   ----------   ------------\n");
-    displayEmployeeData(emp);
-
-    printf("\n******************************************************************************\n");
-    printf("                        End of Program 1st.                                  \n");
-    printf("******************************************************************************\n\n");
-}
-
-// Function to find employee with greatest salary
-Employee greatestSalary(Employee *emps, int size)
-{
-    Employee maxEmp = emps[0];
-    for (int i = 1; i < size; i++)
+    printf("====================================================\n");
+    printf("                  EMPLOYEE ENTRY                   \n");
+    printf("====================================================\n");
+    for (int i = 0; i < n; i++)
     {
-        if (emps[i].salary > maxEmp.salary)
-            maxEmp = emps[i];
+        inputEmployee(&emp[i], i + 1);
     }
-    return maxEmp;
+    printf("====================================================\n");
+    printf("                End of Program 1                   \n");
+    printf("====================================================\n\n\n");
 }
 
-// Program 2: Greatest salary among employees
-void f2()
+void f2(struct Employee emp[], int n)
 {
-    printf("******************************************************************************\n");
-    printf("======> Using normal function call <======\n");
-    printf("Q2. Find Employee with greatest salary.\n");
-    printf("******************************************************************************\n\n");
+    struct Employee max = emp[0];
+    for (int i = 1; i < n; i++)
+        if (emp[i].salary > max.salary)
+            max = emp[i];
 
-    int size = 3;
-    Employee emps[3];
+    printf("====================================================\n");
+    printf("        Employee with the Greatest Salary          \n");
+    printf("====================================================\n");
+    printf("+-----------------+------------+-------------+\n");
+    printf("| Name            | ID         | Salary      |\n");
+    printf("+-----------------+------------+-------------+\n");
+    displayEmployee(max);
+    printf("+-----------------+------------+-------------+\n");
 
-    for (int i = 0; i < size; i++)
-    {
-        printf("\nEnter details for Employee %d:\n", i + 1);
-        emps[i] = inputEmployeeData();
-    }
-
-    Employee maxEmp = greatestSalary(emps, size);
-
-    printf("\nEmployee with the greatest salary:\n");
-    printf("\n   Name          ID          Salary\n");
-    printf("----------   ----------   ------------\n");
-    displayEmployeeData(maxEmp);
-
-    printf("\n******************************************************************************\n");
-    printf("                        End of Program 2nd.                                  \n");
-    printf("******************************************************************************\n\n");
+    printf("====================================================\n");
+    printf("                End of Program 2                   \n");
+    printf("====================================================\n\n\n");
 }
 
-// Function to sort employees by name
-void sortACToTheirNames(Employee *emps, int size)
+void f3(struct Employee emp[], int n)
 {
-    Employee temp;
-    for (int r = 1; r < size; r++)
+    struct Employee temp;
+
+    // Sort by Salary
+    for (int i = 0; i < n - 1; i++)
     {
-        for (int i = 0; i < size - r; i++)
+        for (int j = i + 1; j < n; j++)
         {
-            if (strcmp(emps[i].name, emps[i + 1].name) > 0)
+            if (emp[i].salary > emp[j].salary)
             {
-                temp = emps[i];
-                emps[i] = emps[i + 1];
-                emps[i + 1] = temp;
+                temp = emp[i];
+                emp[i] = emp[j];
+                emp[j] = temp;
             }
         }
     }
-}
 
-// Program 3: Sort employees by name
-void f3()
-{
-    printf("******************************************************************************\n");
-    printf("======> Using normal function call <======\n");
-    printf("Q3. Sort Employees by name and display in table format.\n");
-    printf("******************************************************************************\n\n");
+    printf("====================================================\n");
+    printf("          Employees Sorted by Salary               \n");
+    printf("====================================================\n");
+    printf("+-----------------+------------+-------------+\n");
+    printf("| Name            | ID         | Salary      |\n");
+    printf("+-----------------+------------+-------------+\n");
+    for (int i = 0; i < n; i++)
+        displayEmployee(emp[i]);
+    printf("+-----------------+------------+-------------+\n");
+    printf("====================================================\n");
+    printf("                End of Program 3                   \n");
+    printf("====================================================\n\n\n");
 
-    int size = 3;
-    Employee emps[3];
-
-    for (int i = 0; i < size; i++)
+    // Sort by Name
+    for (int i = 0; i < n - 1; i++)
     {
-        printf("\nEnter details for Employee %d:\n", i + 1);
-        emps[i] = inputEmployeeData();
+        for (int j = i + 1; j < n; j++)
+        {
+            if (strcmp(emp[i].name, emp[j].name) > 0)
+            {
+                temp = emp[i];
+                emp[i] = emp[j];
+                emp[j] = temp;
+            }
+        }
     }
 
-    sortACToTheirNames(emps, size);
-
-    printf("\nEmployees sorted by names:\n");
-    printf("\n   Name          ID          Salary\n");
-    printf("----------   ----------   ------------\n");
-    for (int i = 0; i < size; i++)
-    {
-        displayEmployeeData(emps[i]);
-    }
-
-    printf("\n******************************************************************************\n");
-    printf("                        End of Program 3rd.                                  \n");
-    printf("******************************************************************************\n\n");
+    printf("====================================================\n");
+    printf("          Employees Sorted by Name (Alphabetically)\n");
+    printf("====================================================\n");
+    printf("+-----------------+------------+-------------+\n");
+    printf("| Name            | ID         | Salary      |\n");
+    printf("+-----------------+------------+-------------+\n");
+    for (int i = 0; i < n; i++)
+        displayEmployee(emp[i]);
+    printf("+-----------------+------------+-------------+\n");
+    printf("====================================================\n");
+    printf("                End of Program 4                   \n");
+    printf("====================================================\n\n\n");
 }
 
 int main()
 {
-    f1();
-    f2();
-    f3();
+    int n;
+    printf("Enter number of employees: ");
+    scanf("%d", &n);
+
+    struct Employee emp[n]; // C99 VLA
+
+    f1(emp, n);
+    f2(emp, n);
+    f3(emp, n);
+
     return 0;
 }
