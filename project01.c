@@ -81,7 +81,7 @@ void menu()
     {
         printf("\nYou are amazing for trying this calculator!\n");
         printf("Keep coding and creating wonderful things!\n");
-        printf("Remember: Every mistake is a step to mastery!\n");
+        printf("Remember: Every mistake is a step to mastery!!\n");
         printf("==========================================\n");
     }
 }
