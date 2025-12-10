@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-
+// Project 02.
+// Star and Number Pattern Menu-Driven Program
 // FUNCTION DECLARATIONS
 void menu();
 void implement(int, int);
